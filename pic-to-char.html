@@ -108,7 +108,10 @@
             var file = document.getElementById('file').files[0],
                     ctx = canvas.getContext('2d'),
                     url = URL.createObjectURL(file);
-            
+            if (!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(file.name)) {
+                alert("图片类型必须是gif，jpeg，jpg，png中的一种");
+                return;    
+            }
             img.src = url;
             img.onload = function(){
                 canvas.width = img.naturalWidth;

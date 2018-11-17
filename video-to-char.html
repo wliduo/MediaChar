@@ -144,6 +144,10 @@
                     alert("请先选择文件");
                     return;
                 }
+                if (!/\.(mp4|MP4)$/.test(file.name)) {
+                    alert("视频类型必须是mp4");
+                    return;    
+                }
                 var url = URL.createObjectURL(file);
                 console.log(url);
                 video.src = url;
