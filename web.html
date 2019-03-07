@@ -35,12 +35,12 @@
 			<a href="https://char.wang64.cn/web" class="layui-btn layui-btn-danger" target="_blank">网站图片</a>
 		</div>
 
-		<div id="clickLife">
+		<div id="clickPic">
 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-				<legend>日常照片</legend>
+				<legend>网站图片</legend>
 			</fieldset>
 			<div class="layui-row">
-				<div id="life">
+				<div id="pic">
 					<!-- <a href="#">
 						<img alt="Title 1" src="https://wang926454.gitee.io/reader/Image/201811/normal/04025.png" 
 							data="https://wang926454.gitee.io/reader/Image/201811/normal/04025.png"/>
@@ -68,36 +68,36 @@
 			// console.log(viewType);
 			return viewType.match(/(phone|pad|pod|midp|iphone|ipod|iphone os|ios|ipad|android|mobile|blackberry|iemobile|mqqbrowser|juc|rv:1.2.3.4|ucweb|fennec|wosbrowser|browserng|webos|symbian|windows ce|windows mobile|windows phone)/i);
 		}
-		
-		function life() {
+
+		function pic() {
 			var html = "";
-			for (var i = 0, len = lifeList.length; i < len; i++) {
-				var tr = "<a href='" + lifeList[i].data + "' data-sub-html='" + lifeList[i].alt + ' - ' + lifeList[i].desc + "'><img src='" + lifeList[i].src + "' alt='" + lifeList[i].alt + "'></a>";
+			for (var i = 0, len = picList.length; i < len; i++) {
+				var tr = "<a href='" + picList[i].data + "' data-sub-html='" + picList[i].alt + "'><img src='" + picList[i].src + "' alt='" + picList[i].alt + "'></a>";
 				html = html + tr;
 			}
-			document.getElementById('life').innerHTML = html;
-			// $("#life").justifiedGallery();
-			// lifeViewer.update();
+			document.getElementById('pic').innerHTML = html;
+			// $("#pic").justifiedGallery();
+			// picViewer.update();
 			if (isMobile()) {
-				$("#life").justifiedGallery({
+				$("#pic").justifiedGallery({
 					lastRow : 'nojustify',
 					margins : 3
 				}).on('jg.complete', function (e) {
-					// lightGallery(document.getElementById('life'));
+					// lightGallery(document.getElementById('pic'));
 				});
 			} else {
-				$("#life").justifiedGallery({
+				$("#pic").justifiedGallery({
 					rowHeight : 200,
 					lastRow : 'nojustify',
 					margins : 3
 				}).on('jg.complete', function (e) {
-					// lightGallery(document.getElementById('life'));
+					// lightGallery(document.getElementById('pic'));
 				});
 			}
-			$("#life").lightGallery();
+			$("#pic").lightGallery();
 		}
 
-		life();
+		pic();
 
 	</script>
 	<!-- 页面点击小红心 -->
