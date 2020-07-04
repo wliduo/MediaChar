@@ -18,6 +18,24 @@
 		}
 	</style>
 	<script>
+		// 取地址栏参数
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) {
+				return unescape(r[2]);
+			}
+			return null;
+		}
+
+		var debug = getQueryString("debug");
+
+		if (debug) {
+			// 继续访问
+		} else {
+			window.location.href = "https://blog.dolyw.com/photos/";
+		}
+
 		function bingPic() {
 			window.open("https://dolyw.com/go?url=https://api.fczbl.vip/bing");
 		}
